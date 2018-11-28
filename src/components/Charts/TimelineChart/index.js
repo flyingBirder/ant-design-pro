@@ -110,6 +110,7 @@ class TimelineChart extends React.Component {
             <Axis name="x" />
             <Tooltip />
             <Legend name="key" position="top" />
+
             <Geom type="line" position="x*value" size={borderWidth} color="key" />
           </Chart>
           <div style={{ marginRight: -20 }}>

@@ -35,4 +35,7 @@ export default {
   'menu.account.settings': '个人设置',
   'menu.account.trigger': '触发报错',
   'menu.account.logout': '退出登录',
+  'menu.animationPage': '动画页',
+  'menu.animationPage.animationRcTweenOne': '单元素动画',
+  'menu.animationPage.animationRcBannerAnim': 'Banner动画',
 };

@@ -69,9 +69,15 @@ class Bar extends Component {
     const scale = {
       x: {
         type: 'cat',
+        alias: '坐标轴标题名称-月份',
       },
       y: {
         min: 0,
+        alias: '坐标轴标题名称-销售额',
+        // max: 10000,
+        // ticks: [100, 1000, 2000, 3000],
+        // tickInterval: 1000,
+        // tickCount: 10,
       },
     };
 
@@ -82,6 +88,49 @@ class Bar extends Component {
         value: y,
       }),
     ];
+    const obj = {
+      fill: '#cecede',
+      stroke: '1px solid dedede',
+    };
+
+    const titleConfig = {
+      offset: 52,
+      textStyle: {
+        fontSize: '16',
+        textAlign: 'center',
+        fill: 'red',
+        // fontWeight: 'bold',
+        // rotate: 90,
+      },
+      position: 'center',
+    };
+    const lineConfig = {
+      stroke: 'green',
+      fill: 'green',
+      // lineDash: [2, 2, 2],
+      lineWidth: 1,
+    };
+    const tickLineConfig = {
+      lineWidth: 2,
+      stroke: 'red',
+      length: 6,
+    };
+    const labelConfig = {
+      // offset: 20,
+      textStyle: {
+        textAlign: 'end',
+        fill: 'pink',
+        fontSize: '12',
+        // fontWeight: 'bold',
+        // rotate: 0,
+        topBaseline: 'middle',
+      },
+      autoRotate: true,
+      // formatter(text, item, index) {
+      //   let arr = text + '00';
+      //   return arr;
+      // },
+    };
 
     return (
       <div className={styles.chart} style={{ height }} ref={this.handleRoot}>
@@ -93,14 +142,31 @@ class Bar extends Component {
             forceFit={forceFit}
             data={data}
             padding={padding || 'auto'}
+            placeholder={
+              <div style={{ position: 'relative', top: '48%', textAlign: 'center' }}>暂无数据</div>
+            }
+            onGetG2Instance={chartIns => {
+              chartIns.downloadImage();
+            }}
           >
             <Axis
               name="x"
-              title={false}
-              label={autoHideXLabels ? false : {}}
+              title={titleConfig}
+              // label={autoHideXLabels ? false : {}}
+              label={labelConfig}
               tickLine={autoHideXLabels ? false : {}}
+              position="bottom"
+              line={lineConfig}
             />
-            <Axis name="y" min={0} />
+            <Axis
+              name="y"
+              min={0}
+              position="left"
+              title={titleConfig}
+              line={lineConfig}
+              tickLine={tickLineConfig}
+              label={labelConfig}
+            />
             <Tooltip showTitle={false} crosshairs={false} />
             <Geom type="interval" position="x*y" color={color} tooltip={tooltip} />
           </Chart>

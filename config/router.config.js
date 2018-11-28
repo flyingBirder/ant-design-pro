@@ -41,6 +41,23 @@ export default [
           },
         ],
       },
+      {
+        path: '/animation',
+        name: 'animationPage',
+        icon: 'check-circle-o',
+        routes: [
+          {
+            path: '/animation/rcTweenOne',
+            name: 'animationRcTweenOne',
+            component: './AnimationTest/RcTweenOne/index',
+          },
+          {
+            path: 'animation/rcBannerAnim',
+            name: 'animationRcBannerAnim',
+            component: './AnimationTest/RcBannerAnim/index',
+          },
+        ],
+      },
       // forms
       {
         path: '/form',

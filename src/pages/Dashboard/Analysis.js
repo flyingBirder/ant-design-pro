@@ -1,7 +1,7 @@
 import React, { Component, Suspense } from 'react';
 import { connect } from 'dva';
-import { Row, Col, Icon, Menu, Dropdown } from 'antd';
-
+import { Row, Col, Icon, Menu, Dropdown, Button } from 'antd';
+import Animate from 'rc-animate';
 import GridContent from '@/components/PageHeaderWrapper/GridContent';
 import { getTimeDistance } from '@/utils/utils';
 
@@ -14,6 +14,13 @@ const TopSearch = React.lazy(() => import('./TopSearch'));
 const ProportionSales = React.lazy(() => import('./ProportionSales'));
 const OfflineData = React.lazy(() => import('./OfflineData'));
 
+// import Button from 'antd/lib/button';
+const Div = props => {
+  const childrenProps = { ...props };
+  delete childrenProps.show;
+  return <div {...childrenProps} />;
+};
+
 @connect(({ chart, loading }) => ({
   chart,
   loading: loading.effects['chart/fetch'],
@@ -23,6 +30,7 @@ class Analysis extends Component {
     salesType: 'all',
     currentTabKey: '',
     rangePickerValue: getTimeDistance('year'),
+    show: true,
   };
 
   componentDidMount() {
@@ -43,6 +51,11 @@ class Analysis extends Component {
     clearTimeout(this.timeoutId);
   }
 
+  onClick() {
+    this.setState({
+      show: !this.state.show,
+    });
+  }
   handleChangeSalesType = e => {
     this.setState({
       salesType: e.target.value,
