@@ -38,4 +38,6 @@ export default {
   'menu.animationPage': '动画页',
   'menu.animationPage.animationRcTweenOne': '单元素动画',
   'menu.animationPage.animationRcBannerAnim': 'Banner动画',
+  'menu.animationPage.animationRcBannerAnim.definedBannerAnim': '自定义动画',
+  'menu.animationPage.animationRcBannerAnim.autoplayBannerAnim': '基础动画',
 };

@@ -43,18 +43,30 @@ export default [
       },
       {
         path: '/animation',
-        name: 'animationPage',
+        name: 'animationPage', // 动画
         icon: 'check-circle-o',
         routes: [
           {
             path: '/animation/rcTweenOne',
-            name: 'animationRcTweenOne',
+            name: 'animationRcTweenOne', // 单元素动画
             component: './AnimationTest/RcTweenOne/index',
           },
           {
-            path: 'animation/rcBannerAnim',
-            name: 'animationRcBannerAnim',
-            component: './AnimationTest/RcBannerAnim/index',
+            path: '/animation/BannerAnim',
+            name: 'animationRcBannerAnim', // banner动画
+            icon: 'check-circle-o',
+            routes: [
+              {
+                path: '/animation/BannerAnim/autoPlayBanner',
+                name: 'autoplayBannerAnim', // 基础动画
+                component: './AnimationTest/RcBannerAnim/index',
+              },
+              {
+                path: '/animation/BannerAnim/definedBanner',
+                name: 'definedBannerAnim', // 自定义动画
+                component: './AnimationTest/RcBannerAnim/defined.js',
+              },
+            ],
           },
         ],
       },
