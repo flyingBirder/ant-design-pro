@@ -105,9 +105,9 @@ class DefinedBanner extends Component {
           onChange={this.onChange}
           onMouseEnter={this.onMouseEnter}
           onMouseLeave={this.onMouseLeave}
-          prefixCls="custom-arrow-thumb"
+          prefixCls={styles.customArrowThumb}
         >
-          <Element key="aaa" prefixCls="banner-user-elem">
+          <Element key="aaa" prefixCls={styles.bannerUserElem}>
             <BgElement
               key="bg"
               className="bg"
@@ -124,19 +124,19 @@ class DefinedBanner extends Component {
               }}
             />
             <TweenOne
-              className="banner-user-title"
+              className={styles.bannerUserTitle}
               animation={{ y: 30, opacity: 0, type: 'from' }}
             >
               Ant Motion Banner
             </TweenOne>
             <TweenOne
-              className="banner-user-text"
+              className={styles.bannerUserText}
               animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
             >
               The Fast Way Use Animation In React
             </TweenOne>
           </Element>
-          <Element key="bbb" prefixCls="banner-user-elem">
+          <Element key="bbb" prefixCls={styles.bannerUserElem}>
             <BgElement
               key="bg"
               className="bg"
@@ -153,13 +153,13 @@ class DefinedBanner extends Component {
               }}
             />
             <TweenOne
-              className="banner-user-title"
+              className={styles.bannerUserTitle}
               animation={{ y: 30, opacity: 0, type: 'from' }}
             >
               Ant Motion Banner
             </TweenOne>
             <TweenOne
-              className="banner-user-text"
+              className={styles.bannerUserText}
               animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
             >
               The Fast Way Use Animation In React
@@ -168,18 +168,18 @@ class DefinedBanner extends Component {
           <Arrow
             arrowType="prev"
             key="prev"
-            prefixCls="user-arrow"
+            prefixCls={styles.userArrow}
             component={TweenOne}
             onMouseEnter={this.prevEnter}
             onMouseLeave={this.prevLeave}
             animation={{ left: this.state.prevEnter ? 0 : -120 }}
           >
-            <div className="arrow" />
+            <div className={styles.arrow} />
             <TweenOneGroup
               enter={{ opacity: 0, type: 'from' }}
               leave={{ opacity: 0 }}
               appear={false}
-              className="img-wrapper"
+              className={styles.imgWrapper}
               component="ul"
             >
               <li
@@ -191,18 +191,18 @@ class DefinedBanner extends Component {
           <Arrow
             arrowType="next"
             key="next"
-            prefixCls="user-arrow"
+            prefixCls={styles.userArrow}
             component={TweenOne}
             onMouseEnter={this.nextEnter}
             onMouseLeave={this.nextLeave}
             animation={{ right: this.state.nextEnter ? 0 : -120 }}
           >
-            <div className="arrow" />
+            <div className={styles.arrow} />
             <TweenOneGroup
               enter={{ opacity: 0, type: 'from' }}
               leave={{ opacity: 0 }}
               appear={false}
-              className="img-wrapper"
+              className={styles.imgWrapper}
               component="ul"
             >
               <li
@@ -212,7 +212,7 @@ class DefinedBanner extends Component {
             </TweenOneGroup>
           </Arrow>
           <Thumb
-            prefixCls="user-thumb"
+            prefixCls={styles.userThumb}
             key="thumb"
             component={TweenOne}
             animation={{ bottom: this.state.thumbEnter ? 0 : -70 }}

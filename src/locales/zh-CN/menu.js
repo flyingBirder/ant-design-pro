@@ -40,4 +40,6 @@ export default {
   'menu.animationPage.animationRcBannerAnim': 'Banner动画',
   'menu.animationPage.animationRcBannerAnim.definedBannerAnim': '自定义动画',
   'menu.animationPage.animationRcBannerAnim.autoplayBannerAnim': '基础动画',
+  'menu.animationPage.animationRcBannerAnim.mouseSwingBannerAnim': '鼠标摆动',
+  'menu.animationPage.animationRcScrollAnim': '页面滚动',
 };

@@ -66,7 +66,18 @@ export default [
                 name: 'definedBannerAnim', // 自定义动画
                 component: './AnimationTest/RcBannerAnim/defined.js',
               },
+              {
+                path: '/animation/BannerAnim/mouseSwingBanner',
+                name: 'mouseSwingBannerAnim', // 自定义动画
+                component: './AnimationTest/RcBannerAnim/mouseSwing.js',
+              },
             ],
+          },
+          {
+            path: '/animation/ScrollAnim',
+            name: 'animationRcScrollAnim',
+            icon: 'check-circle-o',
+            component: './AnimationTest/RcScrollAnim/index',
           },
         ],
       },
